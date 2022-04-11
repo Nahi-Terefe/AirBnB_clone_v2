@@ -32,10 +32,11 @@ def C_is_fun(text):
     passed when calling the route /c/<text>"""
     return 'C %s' % text.replace('_', ' ')
 
+
 @app.route('/python/')
 @app.route('/python/<text>')
 def python_is_cool(text='is cool'):
-    """ 
+    """
     display “Python ”, followed by the value of the text variable
     """
     return 'Python %s' % text.replace('_', ' ')
