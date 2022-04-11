@@ -6,6 +6,7 @@ a script that starts a Flask web application:
         * '/'
         * '/hbnb'
         * /c/<text>
+        * /python/(<text>)
 """
 
 from flask import Flask
@@ -30,6 +31,14 @@ def C_is_fun(text):
     """ returns 'C + text' what ever text
     passed when calling the route /c/<text>"""
     return 'C %s' % text.replace('_', ' ')
+
+@app.route('/python/')
+@app.route('/python/<text>')
+def python_is_cool(text='is cool'):
+    """ 
+    display “Python ”, followed by the value of the text variable
+    """
+    return 'Python %s' % text.replace('_', ' ')
 
 
 if __name__ == '__main__':
